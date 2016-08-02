@@ -1,0 +1,39 @@
+{
+  "name": "component-webpack-resolver-plugin",
+  "version": "2.0.0",
+  "description": "Webpack plugin to resolve components based on dirname",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "npm run test:watch",
+    "test": "mocha",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "nyc --reporter=lcov npm test -- --reporter dot && nyc report",
+    "lint": "eslint src/",
+    "compile": "rimraf lib/*; babel src/ -d lib/ -s",
+    "compile:watch": "npm run compile -- -w",
+    "prepublish": "npm run compile"
+  },
+  "author": "Olivier Louvignes <olivier@mg-crea.com>",
+  "repository": "github:mgcrea/component-webpack-resolver-plugin",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.11.6",
+    "codeclimate-test-reporter": "^0.3.3",
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "expect": "^1.20.2",
+    "mocha": "^2.5.3",
+    "nyc": "^7.1.0",
+    "rimraf": "^2.5.4"
+  }
+}
