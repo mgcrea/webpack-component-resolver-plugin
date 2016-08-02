@@ -1,6 +1,6 @@
 # Webpack Component Resolver Plugin
 
-[![project status](https://img.shields.io/badge/status-stable-green.svg?style=flat)](https://github.com/mgcrea/component-webpack-resolver-plugin) [![license](https://img.shields.io/github/license/mgcrea/component-webpack-resolver-plugin.svg?style=flat)](https://tldrlegal.com/license/mit-license) [![build status](http://img.shields.io/travis/mgcrea/component-webpack-resolver-plugin/master.svg?style=flat)](http://travis-ci.org/mgcrea/component-webpack-resolver-plugin) [![dependencies status](https://img.shields.io/david/mgcrea/component-webpack-resolver-plugin.svg?style=flat)](https://david-dm.org/mgcrea/component-webpack-resolver-plugin) [![devDependencies status](https://img.shields.io/david/dev/mgcrea/component-webpack-resolver-plugin.svg?style=flat)](https://david-dm.org/mgcrea/component-webpack-resolver-plugin#info=devDependencies) [![coverage status](http://img.shields.io/codeclimate/coverage/github/mgcrea/component-webpack-resolver-plugin.svg?style=flat)](https://codeclimate.com/github/mgcrea/component-webpack-resolver-plugin) [![climate status](https://img.shields.io/codeclimate/github/mgcrea/component-webpack-resolver-plugin.svg?style=flat)](https://codeclimate.com/github/mgcrea/component-webpack-resolver-plugin)
+[![project status](https://img.shields.io/badge/status-stable-green.svg?style=flat)](https://github.com/mgcrea/component-resolver-webpack-plugin) [![license](https://img.shields.io/github/license/mgcrea/component-resolver-webpack-plugin.svg?style=flat)](https://tldrlegal.com/license/mit-license) [![build status](http://img.shields.io/travis/mgcrea/component-resolver-webpack-plugin/master.svg?style=flat)](http://travis-ci.org/mgcrea/component-resolver-webpack-plugin) [![dependencies status](https://img.shields.io/david/mgcrea/component-resolver-webpack-plugin.svg?style=flat)](https://david-dm.org/mgcrea/component-resolver-webpack-plugin) [![devDependencies status](https://img.shields.io/david/dev/mgcrea/component-resolver-webpack-plugin.svg?style=flat)](https://david-dm.org/mgcrea/component-resolver-webpack-plugin#info=devDependencies) [![coverage status](http://img.shields.io/codeclimate/coverage/github/mgcrea/component-resolver-webpack-plugin.svg?style=flat)](https://codeclimate.com/github/mgcrea/component-resolver-webpack-plugin) [![climate status](https://img.shields.io/codeclimate/github/mgcrea/component-resolver-webpack-plugin.svg?style=flat)](https://codeclimate.com/github/mgcrea/component-resolver-webpack-plugin)
 
 Webpack2 plugin to resolve components based on their dirname when an index file is not present.
 
@@ -31,10 +31,15 @@ With this plugin, you can clean up the structure and have working directory impo
 
 ### Quickstart
 
+```
+npm i --save-dev component-webpack-resolver-plugin
+```
+
 1. You can use the raw plugin
 
     ```js
     import ComponentResolverPlugin from 'component-webpack-resolver-plugin';
+    // or // const ComponentResolverPlugin = require('component-webpack-resolver-plugin').default;
 
     resolve: {
       plugins: [new ComponentResolverPlugin('existing-directory', 'undescribed-raw-file')]
@@ -45,6 +50,7 @@ With this plugin, you can clean up the structure and have working directory impo
 
     ```js
     import {factory as componentResolverPluginFactory} from 'component-webpack-resolver-plugin';
+    // or // const componentResolverPluginFactory = require('component-webpack-resolver-plugin').factory;
 
     resolve: {
       plugins: [componentResolverPluginFactory()]

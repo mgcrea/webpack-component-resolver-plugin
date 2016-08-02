@@ -17,7 +17,7 @@ export default class ComponentResolverPlugin {
       const filename = `${path.basename(request.path)}.js`;
       const filePath = resolver.join(request.path, filename);
       rfs.stat(filePath, (err, stats) => {
-        if (!stats.isFile() || err) {
+        if (err || !stats.isFile()) {
           callback();
           return;
         }
