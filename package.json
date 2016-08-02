@@ -1,6 +1,6 @@
 {
   "name": "component-webpack-resolver-plugin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Webpack plugin to resolve components based on dirname",
   "main": "lib/index.js",
   "scripts": {
@@ -16,8 +16,7 @@
   "author": "Olivier Louvignes <olivier@mg-crea.com>",
   "repository": "github:mgcrea/component-webpack-resolver-plugin",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-eslint": "^6.1.2",
