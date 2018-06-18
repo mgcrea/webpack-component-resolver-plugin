@@ -1,4 +1,3 @@
-
 import expect from 'expect';
 import path from 'path';
 import fs from 'fs';
@@ -17,14 +16,14 @@ const mockResolverFactory = (request, done) => ({
 
 describe('ComponentResolverPlugin', () => {
   it('should properly expose a function', () => {
-    expect(ComponentResolverPlugin).toBeA('function');
+    expect(typeof ComponentResolverPlugin).toBe('function');
   });
   it('should properly have source and target keys', () => {
     const resolverPlugin = new ComponentResolverPlugin('existing-directory', 'undescribed-raw-file', {});
-    expect(resolverPlugin).toBeA('object');
-    expect(resolverPlugin).toIncludeKeys(['source', 'target']);
+    expect(typeof resolverPlugin).toBe('object');
+    expect(Object.keys(resolverPlugin)).toEqual(['source', 'target', 'include']);
   });
-  it('should properly resolve a component file based on dirname', (done) => {
+  it('should properly resolve a component file based on dirname', done => {
     const resolverPlugin = new ComponentResolverPlugin('existing-directory', 'undescribed-raw-file', {});
     const requestPath = path.join(fixturesPath, 'FooComponent');
     const mockResolver = mockResolverFactory({path: requestPath}, (target, request) => {
@@ -33,7 +32,7 @@ describe('ComponentResolverPlugin', () => {
     });
     resolverPlugin.apply(mockResolver);
   });
-  it('should properly prioritize an index file resolve', (done) => {
+  it('should properly prioritize an index file resolve', done => {
     const resolverPlugin = new ComponentResolverPlugin('existing-directory', 'undescribed-raw-file', {});
     const requestPath = path.join(fixturesPath, 'BarComponent');
     const mockResolver = mockResolverFactory({path: requestPath}, (target, request) => {

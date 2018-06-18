@@ -2,5 +2,6 @@ node_modules/
 lib/
 .DS_Store
 *.log
+.history/
 .nyc_output/
 coverage/
