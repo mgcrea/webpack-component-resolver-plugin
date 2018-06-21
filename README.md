@@ -8,7 +8,7 @@ Let you drop `index.js` files when you only want to export one file/component:
 
 ## Deprecation notice
 
-This plugin has been deprecated and will no longer be maintained, the prefered way is to use the [babel-plugin-component-resolver](https://github.com/mgcrea/babel-plugin-component-resolver) to achieve the same result.
+This plugin has been **deprecated** and will no longer be maintained, the prefered way is to use the [babel-plugin-component-resolver](https://github.com/mgcrea/babel-plugin-component-resolver) to achieve the same result.
 
 ## Usage
 
